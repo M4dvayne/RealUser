@@ -15,6 +15,7 @@
 		23EE36EF279C72F200640DF6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23EE36ED279C72F200640DF6 /* LaunchScreen.storyboard */; };
 		23EE3701279C7CA800640DF6 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EE3700279C7CA800640DF6 /* WelcomeViewController.swift */; };
 		23EE3704279C7EF600640DF6 /* InformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EE3703279C7EF600640DF6 /* InformationViewController.swift */; };
+		23EE3708279C86D200640DF6 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EE3707279C86D200640DF6 /* Person.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		23EE36F0279C72F200640DF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		23EE3700279C7CA800640DF6 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		23EE3703279C7EF600640DF6 /* InformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationViewController.swift; sourceTree = "<group>"; };
+		23EE3707279C86D200640DF6 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 		23EE36E1279C72EE00640DF6 /* RealUser */ = {
 			isa = PBXGroup;
 			children = (
+				23EE370A279C86E600640DF6 /* Models */,
 				23EE36FC279C74D200640DF6 /* App */,
 				23EE36F8279C743A00640DF6 /* ViewControllers */,
 				23EE36FA279C747400640DF6 /* Storyboards */,
@@ -81,8 +84,8 @@
 		23EE36FA279C747400640DF6 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				23EE36E8279C72EE00640DF6 /* Main.storyboard */,
 				23EE36ED279C72F200640DF6 /* LaunchScreen.storyboard */,
+				23EE36E8279C72EE00640DF6 /* Main.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -103,6 +106,14 @@
 				23EE36F0279C72F200640DF6 /* Info.plist */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		23EE370A279C86E600640DF6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				23EE3707279C86D200640DF6 /* Person.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -175,6 +186,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23EE3708279C86D200640DF6 /* Person.swift in Sources */,
 				23EE36E7279C72EE00640DF6 /* LoginViewController.swift in Sources */,
 				23EE3701279C7CA800640DF6 /* WelcomeViewController.swift in Sources */,
 				23EE36E3279C72EE00640DF6 /* AppDelegate.swift in Sources */,
