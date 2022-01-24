@@ -8,79 +8,64 @@
 
 struct User {
     
-    let user: Login
-    let password: Password
-    let persons: [UserData]
-    let information: SegmentedInfo
+    let login: PersonalData
+    let password: PersonalData
+    let personsInfo: UserInfo
+
     
-//    static func getUser() -> [User] {
-//        [User()
-//        ]
-//    }
-}
-
-
-
-struct UserData {
-    var login: Login
-    var password : Password
-}
-
-//Логины пользователей
-
-enum Login {
-    case myLogin
-    case elonLogin
-    
-    var logins: String {
-        switch self {
+    static func getUser() -> User {
         
-        case .myLogin:
-            return "Vyacheslav"
-        case .elonLogin:
-           return "Elon"
-        }
-    }
-}
-
-//Пароли пользователей
-
-enum Password {
-    case kremnev
-    case musk
-    
-    var passwords: String {
-        switch self {
+        User(login: .login, password: .password, personsInfo: .aboutPerson)
         
-        case .kremnev:
-            return "Kremnev"
-        case .musk:
-            return "ElonMusk"
-        }
     }
-}
 
-//Разделы для сегментов
 
-enum SegmentedInfo {
+
+
+
+//информация о пользователе
+
+enum UserInfo {
     
-    case person
+    case aboutPerson
     case education
     case hobbies
     
-    var segmentDescription: String {
-        
+    var userData: String {
         switch self {
         
-        case .person:
-            return "Здесь находится описание данных о пользователе."
+        
+        case .aboutPerson:
+            return "Information about person"
         case .education:
-            return "Здесь находится описание данных об образовании пользователя."
+           return "Information about education"
         case .hobbies:
-            return "Здесь находится описание данных об увлечениях пользователя."
+           return "Information about hobbies"
         }
     }
 }
 
+//персональная информация пользователя
+
+enum PersonalData {
+    case login
+    case password
+    
+    var privateInfo: String {
+        switch self {
+        
+        
+        case .login:
+            return "Vyacheslav"
+        case .password:
+            return "28111992"
+        }
+    }
+}
+
+   
+    
+
+}
 
 

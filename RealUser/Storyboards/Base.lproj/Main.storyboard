@@ -11,7 +11,7 @@
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginViewController" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="RealUser" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -38,6 +38,7 @@
                                         <rect key="frame" x="123.5" y="0.0" width="38" height="30"/>
                                         <state key="normal" title="Login"/>
                                         <connections>
+                                            <action selector="checkUserButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="nKR-Ma-Mix"/>
                                             <segue destination="0cz-8j-KGj" kind="presentation" modalPresentationStyle="fullScreen" id="ZPp-XS-oG6"/>
                                         </connections>
                                     </button>
@@ -48,11 +49,17 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="130" height="27"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <state key="normal" title="Forgot your login?"/>
+                                                <connections>
+                                                    <action selector="alertAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rcY-ac-Fxv"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xrk-Rd-sX8">
                                                 <rect key="frame" x="155" y="0.0" width="130" height="27"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <state key="normal" title="Forgot your password?"/>
+                                                <connections>
+                                                    <action selector="alertAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3KF-zx-xB2"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -70,10 +77,14 @@
                             <constraint firstItem="vAf-BH-HAf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vUh-nR-cue"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="loginTextField" destination="d3j-YP-CXT" id="Eck-WT-VLK"/>
+                        <outlet property="passwordTextField" destination="ZeS-8z-ykC" id="Fm6-Cg-7Tl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-581" y="-51"/>
+            <point key="canvasLocation" x="-581.25" y="-51.760563380281688"/>
         </scene>
         <!--Home-->
         <scene sceneID="tSx-vr-K8V">
@@ -93,8 +104,8 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zFU-Vj-8oA">
-                                        <rect key="frame" x="50" y="204" width="46" height="30"/>
-                                        <state key="normal" title="Button"/>
+                                        <rect key="frame" x="49" y="204" width="48" height="30"/>
+                                        <state key="normal" title="Logout"/>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -107,20 +118,23 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="person.fill" catalog="system" id="RMX-dE-2QL"/>
+                    <connections>
+                        <outlet property="welcomeUserLabel" destination="kst-fw-i4N" id="WSg-xo-R31"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j41-XV-LYU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1080" y="-52.816901408450704"/>
+            <point key="canvasLocation" x="-474" y="764"/>
         </scene>
         <!--Information View Controller-->
         <scene sceneID="XLN-TN-qOk">
             <objects>
-                <viewController id="n6T-o8-LsB" customClass="InformationViewController" sceneMemberID="viewController">
+                <viewController id="n6T-o8-LsB" customClass="InformationViewController" customModule="RealUser" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FsR-XZ-S2C">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="IUn-49-kRR">
+                            <segmentedControl opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="IUn-49-kRR">
                                 <rect key="frame" x="16" y="64" width="288" height="32"/>
                                 <segments>
                                     <segment title="Person"/>
@@ -128,6 +142,12 @@
                                     <segment title="Hobbies"/>
                                 </segments>
                                 <color key="selectedSegmentTintColor" systemColor="linkColor"/>
+                                <connections>
+                                    <action selector="showEducationDescription" destination="n6T-o8-LsB" eventType="valueChanged" id="NQj-e4-Bch"/>
+                                    <action selector="showPersonDescription" destination="n6T-o8-LsB" eventType="valueChanged" id="ZVD-eo-Zl4"/>
+                                    <action selector="showPersonHobbies" destination="n6T-o8-LsB" eventType="valueChanged" id="pHH-f2-9J9"/>
+                                    <action selector="showUserInfo:" destination="n6T-o8-LsB" eventType="valueChanged" id="ZHn-i4-RnO"/>
+                                </connections>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Info" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GuQ-TI-5aM">
                                 <rect key="frame" x="143.5" y="272" width="33" height="24"/>
@@ -147,10 +167,14 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ta8-Rk-6nc"/>
+                    <connections>
+                        <outlet property="personDescriptionLabel" destination="GuQ-TI-5aM" id="a4H-us-dp9"/>
+                        <outlet property="userInfoText" destination="GuQ-TI-5aM" id="NDz-i2-KEP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fi8-wU-9ix" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2782.5" y="-52.816901408450704"/>
+            <point key="canvasLocation" x="246" y="1563"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="zS6-x1-XDx">
@@ -158,6 +182,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="0cz-8j-KGj" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="p1Q-0T-WPD">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -168,7 +193,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hk5-mP-wgC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="251" y="-53"/>
+            <point key="canvasLocation" x="246" y="-53"/>
         </scene>
         <!--Info-->
         <scene sceneID="qzt-6d-OVN">
@@ -187,7 +212,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SLb-BQ-Log" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1908.75" y="-52.816901408450704"/>
+            <point key="canvasLocation" x="823" y="764"/>
         </scene>
     </scenes>
     <resources>
