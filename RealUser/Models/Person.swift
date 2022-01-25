@@ -11,20 +11,26 @@ struct User {
     let login: PersonalData
     let password: PersonalData
     let personsInfo: UserInfo
+    let person: Person
 
     
     static func getUser() -> User {
         
-        User(login: .login, password: .password, personsInfo: .aboutPerson)
+        User(login: .login, password: .password, personsInfo: .aboutPerson, person: Person.getPerson())
         
     }
 
-
-
-
-
 //информация о пользователе
 
+    struct Person {
+        let name: String
+        let surname: String
+        
+        static func getPerson() -> Person {
+            Person(name: "Vyacheslav", surname: "Kremnev")
+        }
+    }
+    
 enum UserInfo {
     
     case aboutPerson

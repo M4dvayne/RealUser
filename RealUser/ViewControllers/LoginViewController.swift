@@ -9,7 +9,7 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
-    private let user = User.getUser()
+     private let user = User.getUser()
     
     @IBOutlet weak var loginTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -28,10 +28,10 @@ class LoginViewController: UIViewController {
         
         for viewController in viewControllers {
             
-            if let welcomeVC = segue.destination as? WelcomeViewController { welcomeVC.welcomeLabel = "Hello, \(loginTextField.text ?? "")"
-                } else if let navigationVC = viewController as? UINavigationController {
-                    //let userInfoVC = navigationVC.topViewController as? InformationViewController
-                    
+            if let welcomeVC = segue.destination as? WelcomeViewController {
+                print("!")
+            } else {
+                print("Error")
             }
         }
         

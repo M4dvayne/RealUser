@@ -19,9 +19,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2365F924279F084200A5E9B6 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = RealUser/ViewControllers/LoginViewController.swift; sourceTree = SOURCE_ROOT; };
-		2365F927279F085300A5E9B6 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WelcomeViewController.swift; path = RealUser/ViewControllers/WelcomeViewController.swift; sourceTree = SOURCE_ROOT; };
-		2365F92A279F087800A5E9B6 /* InformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = InformationViewController.swift; path = RealUser/ViewControllers/InformationViewController.swift; sourceTree = SOURCE_ROOT; };
+		2365F924279F084200A5E9B6 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		2365F927279F085300A5E9B6 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		2365F92A279F087800A5E9B6 /* InformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationViewController.swift; sourceTree = "<group>"; };
 		23EE36DF279C72EE00640DF6 /* RealUser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RealUser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		23EE36E2279C72EE00640DF6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		23EE36E4279C72EE00640DF6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -113,8 +113,9 @@
 			children = (
 				23EE3707279C86D200640DF6 /* Person.swift */,
 			);
-			path = Models;
-			sourceTree = "<group>";
+			name = Models;
+			path = RealUser/Models;
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
