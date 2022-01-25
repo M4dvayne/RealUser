@@ -8,6 +8,8 @@
 import UIKit
 
 class WelcomeViewController: UIViewController {
+    
+    private let user = User.getUser()
 
     
     @IBOutlet weak var welcomeUserLabel: UILabel!

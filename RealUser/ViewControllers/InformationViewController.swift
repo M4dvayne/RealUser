@@ -9,7 +9,7 @@ import UIKit
 
 class InformationViewController: UIViewController {
 
-    
+    private let user = User.getUser()
     
     
     @IBOutlet weak var userInfoText: UILabel!
