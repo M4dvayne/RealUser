@@ -28,13 +28,14 @@ class LoginViewController: UIViewController {
         
         for viewController in viewControllers {
             
-            if let welcomeVC = segue.destination as? WelcomeViewController {
+            if viewController == segue.destination as? WelcomeViewController {
+                let welcomeVC = segue.destination as? WelcomeViewController
+                //welcomeVC
                 print("!")
             } else {
                 print("Error")
             }
         }
-        
     }
     
     @IBAction func checkUserButton() {
