@@ -8,18 +8,16 @@
 import UIKit
 
 class LoginViewController: UIViewController {
-
-    private let user = User.getUser()
     
     @IBOutlet weak var loginTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
+    private let user = User.getUser()
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super .touchesBegan(touches, with: event)
+        self.view.endEditing(true)
     }
-    
-    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
@@ -29,28 +27,48 @@ class LoginViewController: UIViewController {
         for viewController in viewControllers {
             
             if let welcomeVC = viewController as? WelcomeViewController {
-                print("welcomeVC")
+                welcomeVC.user = user
+                welcomeVC.userGreeting = "Hello, \(user.person.name) \(user.person.surname)!"
             } else if let navigationVC = viewController as? UINavigationController {
                 print("InformationVC")
                 let informationVC = navigationVC.topViewController as? InformationViewController
+                //Вот здесь я так и не смог понять почему informationVC опционален(?) и чем его можно инициализировать, буду признателен объяснению)
+                informationVC?.user = user
             }
         }
     }
     
-    @IBAction func checkUserButton() {
+    @IBAction func checkUserButton(_ sender: UIAlertController) {
         
+        if loginTextField.text != user.login || passwordTextField.text != user.password {
+            
+            showAlert(title:"Oooops!", message: "Wrong login or password!\n Please try again. ")
+            passwordTextField.text = ""
+        }
     }
-    
-   
-    @IBAction func alertAction(_ sender: Any) {
+
+    @IBAction func showUserData(_ sender: UIButton) {
+        
+        if sender.tag == 0 {
+            showAlert(title: "🤔", message: "Your login is \(user.login)")
+        } else if sender.tag == 1 {
+            showAlert(title: "🤔", message: "Your password is \(user.password)")
+        }
     }
-    
-   
-    
 }
 
-
-
-
-
-
+extension LoginViewController {
+    
+    private func showAlert (title: String, message: String, preferredStyle:UITextField? = nil) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let alertAction = UIAlertAction(title: "Ok", style: .default)
+        alert.addAction(alertAction)
+        present(alert, animated: true, completion: nil)
+    }
+    
+    @IBAction func unwind(for segue: UIStoryboardSegue) {
+        loginTextField.text = ""
+        passwordTextField.text = ""
+    }
+    //Здесь непонятно касательно размещения, это ведь Action, но его создание выше расширения приводит к ошибке(
+}

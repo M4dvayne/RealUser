@@ -5,73 +5,39 @@
 //  Created by Вячеслав Кремнев on 1/22/22.
 //
 
-
 struct User {
     
-    let login: PersonalData
-    let password: PersonalData
-    let personsInfo: UserInfo
+    let login: String
+    let password: String
     let person: Person
-
     
     static func getUser() -> User {
-        
-        User(login: .login, password: .password, personsInfo: .aboutPerson, person: Person.getPerson())
-        
-    }
-
-//информация о пользователе
-
-    struct Person {
-        let name: String
-        let surname: String
-        
-        static func getPerson() -> Person {
-            Person(name: "Vyacheslav", surname: "Kremnev")
-        }
-    }
-    
-enum UserInfo {
-    
-    case aboutPerson
-    case education
-    case hobbies
-    
-    var userData: String {
-        switch self {
-        
-        
-        case .aboutPerson:
-            return "Information about person"
-        case .education:
-           return "Information about education"
-        case .hobbies:
-           return "Information about hobbies"
-        }
+        User(
+            login: "Vyacheslav",
+            password: "28111992",
+            person: Person.getPerson()
+        )
     }
 }
 
-//персональная информация пользователя
-
-enum PersonalData {
-    case login
-    case password
+struct Person {
+    let name: String
+    let surname: String
+    let personsInfo: [String]
     
-    var privateInfo: String {
-        switch self {
-        
-        
-        case .login:
-            return "Vyacheslav"
-        case .password:
-            return "28111992"
-        }
+    static func getPerson() -> Person {
+        Person(
+            name: "Vyacheslav",
+            surname: "Kremnev",
+            personsInfo: [
+                "- Имя: Вячеслав.\n - Пол: Мужской.\n - Рост: 176 см.\n - Вес: 75 кг.",
+                "- Школьное образование: 2000 г. - 2009 г.\n - Мореходный колледж им Г.Я. Седова: 2009 г. - 2013 г.\n - SwiftBook: 2021 - ♾",
+                "- Поиск с металлоискателем.\n - Гитара.\n - Английский язык.\n - Компьютерные игры."
+            ]
+        )
     }
 }
 
-   
-    
 
-}
 
 
