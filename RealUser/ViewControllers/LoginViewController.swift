@@ -30,17 +30,14 @@ class LoginViewController: UIViewController {
                 welcomeVC.user = user
                 welcomeVC.userGreeting = "Hello, \(user.person.name) \(user.person.surname)!"
             } else if let navigationVC = viewController as? UINavigationController {
-                print("InformationVC")
                 let informationVC = navigationVC.topViewController as? InformationViewController
-                //Вот здесь я так и не смог понять почему informationVC опционален(?) и чем его можно инициализировать, буду признателен объяснению)
                 informationVC?.user = user
             }
         }
     }
     
     @IBAction func checkUserButton(_ sender: UIAlertController) {
-        
-        if loginTextField.text != user.login || passwordTextField.text != user.password {
+                if loginTextField.text != user.login || passwordTextField.text != user.password {
             
             showAlert(title:"Oooops!", message: "Wrong login or password!\n Please try again. ")
             passwordTextField.text = ""
@@ -70,5 +67,4 @@ extension LoginViewController {
         loginTextField.text = ""
         passwordTextField.text = ""
     }
-    //Здесь непонятно касательно размещения, это ведь Action, но его создание выше расширения приводит к ошибке(
 }

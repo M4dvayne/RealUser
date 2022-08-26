@@ -10,7 +10,6 @@ import UIKit
 class WelcomeViewController: UIViewController {
     
     var user: User!
-    
     var userGreeting: String!
     
     @IBOutlet weak var welcomeUserLabel: UILabel!
